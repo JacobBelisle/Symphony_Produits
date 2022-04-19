@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation
+{% endblock %}
+
+{% block body %}
+	<h1>Merci de nous avoir contacté !</h1>
+
+	<h2>Nous avons bien reçu votre {{ ans.typedemessage }} !</h2>
+
+	<p>Nom:
+		{{ ans.name }}</p>
+	<p>Prénom:
+		{{ ans.prenom }}</p>
+	<p>Courriel:
+		{{ ans.courriel }}</p>
+	<p>Type de message:
+		{{ ans.typedemessage }}</p>
+	<p>Contenu:
+		{{ ans.message }}</p>
+
+{% endblock %}

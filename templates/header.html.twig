@@ -1,0 +1,26 @@
+<header>
+	<ul>
+		<li>
+			<a href="/">Accueil</a>
+		</li>
+		<li>
+			<a href="/produits">Produits</a>
+		</li>
+		<li>
+			<a href="/contact">Contact</a>
+		</li>
+		<li>
+			<a href="/register">Inscription</a>
+		</li>
+
+		{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+			<li>
+				<a href="/logout">Déconnexion</a>
+			</li>
+		{% else %}
+			<li>
+				<a href="/login">Connexion</a>
+			</li>
+		{% endif %}
+	</ul>
+</header>

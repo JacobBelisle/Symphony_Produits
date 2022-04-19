@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client form
+{% endblock %}
+
+
+{% block body %}
+	<style>
+		.content-1 {
+			margin: 10px;
+		}
+	</style>
+
+	<div>
+		{{ form_start(form) }}
+		<div class="content-1">
+			{{ form_label(form.name) }}
+			{{ form_widget(form.name) }}
+		</div>
+
+		<div class="content-1">
+			{{ form_label(form.prenom) }}
+			{{ form_widget(form.prenom) }}
+		</div>
+
+		<div class="content-1">
+			{{ form_label(form.courriel) }}
+			{{ form_widget(form.courriel) }}
+		</div>
+
+		<div class="content-1">
+			{{ form_label(form.typedemessage) }}
+			<br>
+			{{ form_widget(form.typedemessage) }}
+		</div>
+
+		<div class="content-1">
+			{{ form_label(form.message) }}
+			<br>
+			{{ form_widget(form.message) }}
+		</div>
+
+		<div class="content-1">
+			{{ form_widget(form.envoyer) }}
+		</div>
+
+		{{ form_end(form) }}
+	</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProduitController!
+{% endblock %}
+
+{% block body %}
+	<h1>Liste des produits</h1>
+
+	{% for message in app.session.flashbag.get('message') %}
+		<div class="alert alert-success alert-dismissible fade show">{{ message }}</div>
+	{% endfor %}
+
+	<a href="/ajoutProduit">Ajouter un produit</a>
+
+	<div>
+		<ul>
+			{% for product in list_produits %}
+				<li>{{ product.getProduit() }}
+					-
+					<a href="produit/{{ product.getId() }}">En savoir plus</a>
+
+					<a href="updateProduit/{{ product.getId() }}" class="text-decoration-none">
+						<button class="btn btn-warning">Modifier</button>
+					</a>
+
+
+					<a href="deleteProduit/{{ product.getId() }}" class="text-decoration-none">
+						<button class="btn btn-danger">Supprimer</button>
+					</a>
+
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}
